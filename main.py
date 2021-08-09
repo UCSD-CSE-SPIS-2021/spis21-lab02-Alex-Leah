@@ -36,6 +36,24 @@ def sumDigits(x):
 
    return sum
 
+def convertWageMtoW(mWage):
+
+   wageGap = 0.182
+
+   ratio = 1 - wageGap
+
+   return mWage * ratio
+
+# test cases (given from assignment)   
+print(convertWageMtoW(100))
+print(convertWageMtoW(76.2))
+print(convertWageMtoW(0))
+
+# own test cases
+print(convertWageMtoW(34))
+print(convertWageMtoW(94))
+
+
 userNumber = getNumber()
 print(userNumber)
 print("summed up: ", sumDigits(502))
