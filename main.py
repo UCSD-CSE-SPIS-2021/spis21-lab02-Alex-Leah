@@ -36,22 +36,30 @@ def sumDigits(x):
 
    return sum
 
-def convertWageMtoW(mWage):
+#added the race parameter to make wage calculation more specific
+def convertWageMtoW(mWage, race):
 
-   wageGap = 0.182
+   if race == "white":
+     wageGap = 0.182
+   elif race == "black":
+     wageGap = 0.099
+   elif race == "hispanic":
+     wageGap = 0.13
+   elif race == "asian":
+     wageGap = 0.332
 
    ratio = 1 - wageGap
 
    return mWage * ratio
 
 # test cases (given from assignment)   
-print(convertWageMtoW(100))
-print(convertWageMtoW(76.2))
-print(convertWageMtoW(0))
+print(convertWageMtoW(100, "white"))
+print(convertWageMtoW(76.2, "asian"))
+print(convertWageMtoW(0, "white"))
 
 # own test cases
-print(convertWageMtoW(34))
-print(convertWageMtoW(94))
+print(convertWageMtoW(34, "black"))
+print(convertWageMtoW(94, "hispanic"))
 
 
 userNumber = getNumber()
